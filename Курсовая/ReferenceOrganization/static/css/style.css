@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #777;
+}
+
+.cover-container {
+    max-width: 42em;
+}
+
+.nav-link {
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, .5);
+}
+
+h1, h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.item {
+  letter-spacing: 2px;
+}
+
+.lead {
+  font-size: 16px;
+}

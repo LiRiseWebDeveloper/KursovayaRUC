@@ -1,0 +1,83 @@
+{% extends "base_main.html" %}
+
+{% block title %}
+Описание
+{% endblock %}
+
+{% block content %}
+{% for row in cursor %}
+<section class="title container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1>{{ row[1] }}</h1>
+
+      <div class="seperator"></div>
+      <p>{{ row[7] }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 item">
+      <div class="item-in">
+        <h4>
+          Учредитель - {{ row[2] }}
+        </h4>
+        <h4>
+          Директор - {{ row[3] }}, +7{{ row[4] }}
+        </h4>
+        <h4>
+          Филлиалов - {{ row[5] }}
+        </h4>
+        <h4>
+          Специальностей - {{ row[6] }}
+        </h4>
+        <h4>
+          Приемная комиссия - +7{{ row[8] }}
+        </h4>
+        <div class="seperator"></div>
+        <h5>
+          Адрес - {{ row[9] }}
+        </h5>
+        <h5>
+          Электронная почта - {{ row[11] }}
+        </h5>
+        <a href="/searchSpecialties?key={{ row[0] }}" class="noprint">Перейти к специальностям
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+        <hr class="noprint">
+        <a href="{{ row[10] }}" class="noprint">Перейти на сайт колледжа
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-8 item">
+      <div class="item-in">
+        <h4>
+          Местоположение колледжа | Яндекс.Карты
+        </h4>
+        <div class="seperator"></div>
+        <div style="position:relative;overflow:hidden;">
+          <iframe src="{{ row[12] }}" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+        </div>
+        <hr>
+        <a href="/colleges" class="noprint">Назад
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-8 item noprint">
+      <div class="item-in">
+        <a onclick="window.print()">Печать
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

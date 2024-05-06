@@ -1,0 +1,75 @@
+{% extends "base_main.html" %}
+
+{% block title %}
+Специальности
+{% endblock %}
+
+{% block content %}
+{% for row in cursor %}
+<section class="title container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1>Cпециальности - {{ row[0] }}</h1>
+
+      <div class="seperator"></div>
+      <p>Список специальностей данной образовательной организации</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="container">
+  <div class="row">
+    {% for spec in cursor %}
+    <div class="col-md-8 item">
+      <div class="item-in">
+        <h4>
+          {{ mask(spec[1]) }} - {{ spec[2] }}
+        </h4>
+        <h4>
+          Требуемый уровень образования - {{ spec[4] }}
+        </h4>
+        <h4>
+          Форма обучения - {{ spec[5] }}
+        </h4>
+        <h4>
+          Квалификация - {{ spec[7] }}
+        </h4>
+        <h4>
+          Сроки обучения - {{ spec[6] }}
+        </h4>
+        <div class="seperator"></div>
+        <p>{{ spec[3] }}</p>
+        <a href="/Specialties?index={{ spec[8] }}" class="noprint">К описанию специальности
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+        <hr>
+        <a href="/colleges" class="noprint">К колледжам
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+
+
+    <div class="col-md-8 item noprint">
+      <div class="item-in">
+        <a onclick="window.print()">Печать
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-8 item noprint">
+      <div class="item-in">
+        <a href="/">На главную
+          <i class="fa fa-long-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
