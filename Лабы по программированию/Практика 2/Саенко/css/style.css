@@ -1,0 +1,49 @@
+/*Обращение по классам*/
+body {
+    background: url("bg.jpg");
+    background-size: cover;
+}
+
+h1, 
+h2, 
+h3 {
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+img {
+    border: 6px solid #A9A9A9;
+}
+
+.cursiv {
+    font-style: italic;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.container {
+    width: 80%;
+}
+
+/*Обращение по айдишнику*/
+#note_1, 
+#note_2, 
+#note_3, 
+#note_4 {
+    font-weight: bold;
+}
+
+#note_4 {
+    text-decoration: line-through;
+}
+
+#main {
+    text-decoration-line: underline;
+}
